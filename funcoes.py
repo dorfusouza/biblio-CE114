@@ -13,13 +13,14 @@ def listarLivros():
     try:
         with open(ARQUIVO, "r", encoding="utf-8") as arq:
             livros = arq.readlines()
-            return [eval(linha.strip()) for linha in livros]
+            # return [eval(linha.strip()) for linha in livros]
+            return livros
     
     except FileNotFoundError:
         print("Arquivo não encontrado.")
         return []
     except Exception as e:
-        print(f"Erro ao carregar livros: {e}")
+        print(f"Erro ao carregar livros [fx:listarLivros]: {e}")
         return []
     
 def salvar_livros(livros):
